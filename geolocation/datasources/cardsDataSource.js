@@ -1,7 +1,7 @@
 define([],function(){
        return function(sort,filter){
     var cardsModel={
-        id:='Id'
+        id:='Id',
         fields:{
         createdAt:{
         feild:'CreatedAt'

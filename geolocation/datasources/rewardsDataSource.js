@@ -3,24 +3,49 @@ define([],function(){
     var cardsNumber;
            
            var rewardsModel={
-               id:'Id'
+               id:'Id',
                fields:{
                createdAt:
                {
                feild:'CreatedAt'
                defaultValue:new date()
-           }
+           },
            cardNumber:{
                feild:'CardNumber'
                defaultvalue:''
-           }           
+           }  ,         
            
            expiryDate:
            {
-               fielid:'ExpiryDate'
-               defaultValue:mew date()
+               feild:'ExpiryDate'
+               defaultValue:new date()
+           },
+           rewardType:{
+               feild:'RewardType'
+               defaultValue:'Gold'
+           },
+           rewards:
+           {
+               feild:'Rewards'
+               defaultValue:'Free Coffee everyday'
+           }
+           
            }
            }
-           }
-}
-       })
+};
+       
+       var rewards=new kendo.data.DataSource({
+       Type:'Everlive',
+       Schema:
+       {Model:'rewardsModel'},
+       Transport:
+       {TypeName:'rewards'},
+       sort: 
+       { 
+                field: 'CreatedAt',
+                dir: 'desc'
+            
+        }
+       });
+       return rewards;
+       });
